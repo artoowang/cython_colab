@@ -66,7 +66,7 @@ def _build(setup_path, ext_name=None):
                         bufsize=1, universal_newlines=True) as p:
     for line in p.stdout:
       print(line, end='')
-    print(f'Build exit code: {p.poll()}')
+    print(f'Build exit code: {p.wait()}')
 
   new_module_path = glob.glob(f'{ext_name}.cpython-*.so')
   if len(new_module_path) < 1:
